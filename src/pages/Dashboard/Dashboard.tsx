@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router";
-import Sidebar from "../../components/Sidebar";
+import Sidebar from "../../components/layout/Sidebar";
 import DashboardContent from "../../components/DashboardContent";
 import MyTeamsContent from "../../components/MyTeamsContent";
 

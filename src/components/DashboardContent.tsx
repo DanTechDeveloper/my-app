@@ -25,7 +25,7 @@ export default function DashboardContent() {
           <button className="p-2 transition-colors rounded-full text-deep-teal/60 hover:bg-primary/20">
             <span className="material-symbols-outlined">chat_bubble</span>
           </button>
-          <div className="h-8 w-px bg-deep-teal/10 mx-2"></div>
+          <div className="w-px h-8 mx-2 bg-deep-teal/10"></div>
           <div className="flex items-center gap-3 cursor-pointer group">
             <div className="text-right">
               <p className="text-xs font-bold text-deep-teal">Alex Johnson</p>

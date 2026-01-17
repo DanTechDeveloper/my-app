@@ -2,13 +2,14 @@
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/container-queries";
 
+
 @theme {
-  --color-lime-light: #EAFE7B;
+  /* --color-lime-light: #EAFE7B;
   --color-pale-green: #C0E9BA;
   --color-sea-green: #4CA771;
   --color-deep-teal: #013237;
   --color-primary: #4CA771;
-  --color-sidebar-bg: #013237;
+  --color-sidebar-bg: #013237; */
   --font-display: "Lexend", sans-serif;
 
   /* Border Radius Overrides */
@@ -23,7 +24,7 @@
     font-family: var(--font-display);
   }
 
-  .material-symbols-outlined {
+  /* .material-symbols-outlined {
     font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   }
 }
@@ -40,5 +41,5 @@
   ::-webkit-scrollbar-thumb {
     background: #4ca771;
     border-radius: 10px;
-  }
+  } */
 }
