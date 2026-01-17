@@ -1,6 +1,11 @@
-import { Outlet,useNavigate } from "react-router-dom";
-const navigate = useNavigate();
+import { Outlet, useNavigate } from "react-router-dom";
+// const navigate = useNavigate();
 export default function AuthLayout() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/admin"); // or "/register"
+  };
   return (
     <>
       <div className="bg-[#051a12] text-slate-200 min-h-screen overflow-hidden">
@@ -14,12 +19,12 @@ export default function AuthLayout() {
             </span>
           </div>
           <nav className="flex items-center gap-6 text-[#94a3b8] text-sm">
-            <button
-              className="w-full h-3.5 bg-[#166534] hover:bg-[#15803d] text-white font-bold py-3 px-3 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-lg"
-              type="submit"
-              onClick={()=> navigate("/admin")}
-            >
-              <p className="p-3">Login As Admin</p>
+            <button className="bg-[#166534] hover:bg-[#15803d] text-[#ffffff] text-xs font-bold py-2 px-4 rounded-md transition-colors duration-200 ml-4 flex items-center gap-2"
+            onClick={handleClick}>
+              <span className="material-symbols-outlined text-[16px]">
+                admin_panel_settings
+              </span>
+              Login as Admin
             </button>
           </nav>
         </header>
