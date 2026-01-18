@@ -1,7 +1,17 @@
-export default function LoginForm() {
+import {useState} from 'react';
+export default function AdminForm() {
+  const [identifier, setIdentifier] = useState("");
+  const [password, setPassword] = useState("");
+  const [remember, setRemember] = useState(false);
+  const handleAdminLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Dito ilalagay ang API call para sa Admin Login
+    console.log("Logging in as ADMIN...");
+  };
+
   return (
     <>
-      <form>
+      <form onSubmit={handleAdminLogin}>
         <div className="mb-1">
           <label className="block text-[#94a3b8] text-xs font-semibold uppercase tracking-wider mb-2 ml-1">
             Administrator ID / Email
@@ -10,6 +20,8 @@ export default function LoginForm() {
             className="w-full bg-[#061a12] border border-[#1e3a2f] rounded-lg p-3 text-white focus:outline-none focus:border-[#22c55e] transition-all mb-4 placeholder:text-slate-600"
             placeholder="name@university.edu"
             type="text"
+            value={identifier}
+            onChange={(e) => setIdentifier(e.target.value)}
           />
         </div>
         <div className="mb-1">
@@ -25,6 +37,8 @@ export default function LoginForm() {
             className="w-full bg-[#061a12] border border-[#1e3a2f] rounded-lg p-3 text-white focus:outline-none focus:border-[#22c55e] transition-all mb-4 placeholder:text-slate-600"
             placeholder="••••••••"
             type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div className="flex items-center gap-3 px-1 mb-8">
@@ -32,6 +46,8 @@ export default function LoginForm() {
             className="w-4 h-4 rounded bg-[#061a12] border-[#1e3a2f] text-[#166534] focus:ring-[#166534] focus:ring-offset-[#0c2a1f]"
             id="remember"
             type="checkbox"
+            checked={remember}
+            onChange={(e) => setRemember(e.target.checked)}
           />
           <label
             className="text-sm text-[#94a3b8] cursor-pointer select-none"

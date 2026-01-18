@@ -1,10 +1,13 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 // const navigate = useNavigate();
 export default function AuthLayout() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const isAdmin = location.pathname === "/admin";
+  debugger;
 
   const handleClick = () => {
-    navigate("/admin"); // or "/register"
+    navigate(isAdmin ? "/login" : "/admin"); // or "/register"
   };
   return (
     <>
@@ -19,12 +22,14 @@ export default function AuthLayout() {
             </span>
           </div>
           <nav className="flex items-center gap-6 text-[#94a3b8] text-sm">
-            <button className="bg-[#166534] hover:bg-[#15803d] text-[#ffffff] text-xs font-bold py-2 px-4 rounded-md transition-colors duration-200 ml-4 flex items-center gap-2"
-            onClick={handleClick}>
+            <button
+              className="bg-[#166534] hover:bg-[#15803d] text-[#ffffff] text-xs font-bold py-2 px-4 rounded-md transition-colors duration-200 ml-4 flex items-center gap-2"
+              onClick={handleClick}
+            >
               <span className="material-symbols-outlined text-[16px]">
-                admin_panel_settings
+                {isAdmin ? "school" : "admin_panel_settings"}
               </span>
-              Login as Admin
+              {isAdmin ? "Login as Student" : "Login as Admin"}
             </button>
           </nav>
         </header>
