@@ -1,10 +1,8 @@
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
-// const navigate = useNavigate();
 export default function AuthLayout() {
   const navigate = useNavigate();
   const location = useLocation();
   const isAdmin = location.pathname === "/admin";
-  debugger;
 
   const handleClick = () => {
     navigate(isAdmin ? "/login" : "/admin"); // or "/register"

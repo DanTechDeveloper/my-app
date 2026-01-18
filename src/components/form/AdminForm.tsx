@@ -1,12 +1,18 @@
-import {useState} from 'react';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 export default function AdminForm() {
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
+  const navigate = useNavigate();
   const handleAdminLogin = (e: React.FormEvent) => {
     e.preventDefault();
     // Dito ilalagay ang API call para sa Admin Login
     console.log("Logging in as ADMIN...");
+  };
+
+  const handleClick = () => {
+    navigate("/dashboard");
   };
 
   return (
@@ -59,6 +65,7 @@ export default function AdminForm() {
         <button
           className="w-full bg-[#166534] hover:bg-[#15803d] text-white font-bold py-3 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-lg"
           type="submit"
+          onClick={handleClick}
         >
           <span className="text-xl material-symbols-outlined">login</span>
           Sign In
