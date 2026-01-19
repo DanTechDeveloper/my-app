@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router";
 import AuthLayout from "../layouts/AuthLayout";
 import DashboardLayout from "../layouts/DashboardLayout";
+import StudentLayout from "../layouts/StudentLayout";
 import LoginPage from "../pages/Auth/Login";
 import AdminPage from "../pages/Auth/Admin";
 import DashboardContent from "../pages/Dashboard/DashboardContent";
@@ -9,6 +10,7 @@ import TeamsContent from "../pages/Dashboard/TeamsContent";
 import ScheduleContent from "../pages/Dashboard/ScheduleContent";
 import Reports from "../pages/Dashboard/Reports";
 import Registrations from "../pages/Dashboard/Registrations";
+import Settings from "../pages/Dashboard/Settings";
 
 export default function App() {
   return (
@@ -20,6 +22,10 @@ export default function App() {
           <Route path="/admin" element={<AdminPage />} />
         </Route>
 
+       <Route path="/student" element={<StudentLayout/>}>
+        {/* <Route index element={<StudentPage/>}/> */}
+       </Route>
+
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<DashboardContent />} />
           <Route element={<DashboardContent/>}/>
@@ -28,6 +34,7 @@ export default function App() {
           <Route path="schedules" element={<ScheduleContent/>}/>
           <Route path="registrations" element={<Registrations/>}/>
           <Route path="reports" element={<Reports/>}/>
+          <Route path="settings" element={<Settings/>}/>
         </Route>
       </Routes>
     </>
