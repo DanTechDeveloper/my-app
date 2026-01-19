@@ -1,13 +1,17 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 export default function LoginForm() {
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
+  const navigate = useNavigate();
   const handleStudentLogin = (e: React.FormEvent) => {
     e.preventDefault();
     // Dito ilalagay ang API call para sa Student Login
     console.log("Logging in as STUDENT...");
   };
+
+  const handleClick = () => navigate("/student");
 
   return (
     <>
@@ -59,6 +63,7 @@ export default function LoginForm() {
         <button
           className="w-full bg-[#166534] hover:bg-[#15803d] text-white font-bold py-3 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-lg"
           type="submit"
+          onClick={handleClick}
         >
           <span className="text-xl material-symbols-outlined">login</span>
           Sign In
